@@ -8,7 +8,7 @@ Calibrate Angstrom-Prescott model
 Function estimates Angstrom-Prescott model coefficients 'A' and 'B' based on reference data  
 }
 \usage{
-apcal(lat, days, rad_mea, SSD)
+apcal(lat, days, rad_mea,extraT=NULL, DL=NULL, SSD)
 }
 \arguments{
   \item{lat}{
@@ -19,6 +19,12 @@ Vector of class 'Date' of length n.
 }
   \item{rad_mea}{
 Vector of length n containing reference (e.g. measured) solar radiation [MJm-2]. 
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
+}
+  \item{DL}{
+Optional. Vector of length n of day length [h]. If 'NULL' then it is calculated by the function. Providing day length speeds up the computation 
 }
   \item{SSD}{
 Vector of length n containing sunshine duration [in hours]. 
@@ -56,7 +62,7 @@ sunshine <- Metdata$meteo$SUNSHINE
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
-apcal(lat=lat,days=days,rad_mea,SSD=sunshine)
+apcal(lat=lat,days=days,rad_mea,extraT=NULL,DL=NULL,SSD=sunshine)
 }
 
 %\keyword{}

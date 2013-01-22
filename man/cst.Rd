@@ -46,7 +46,7 @@ Jedrzej S. Bojanowski
 
 %\note{}
 
-%\seealso{}
+\seealso{cstRead}
 
 \examples{
 

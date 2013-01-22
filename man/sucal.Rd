@@ -8,7 +8,7 @@ Calibrate Supit-Van Kappel model
 Function estimates Supit-Van Kappel model coefficients 'A', 'B' and 'C' based on reference data
 }
 \usage{
-sucal(days, lat, rad_mea, tmax, tmin, cc)
+sucal(days, lat, rad_mea, extraT=NULL, tmax, tmin, cc)
 }
 
 \arguments{
@@ -20,6 +20,9 @@ Latitude in decimal degrees.
 }
   \item{rad_mea}{
 Vector of length n containing reference (e.g. measured) solar radiation [MJm-2].
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{tmax}{
 Vector of length n containing daily maximum temperature [C].
@@ -64,7 +67,7 @@ days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
 CC <- Metdata$meteo$CLOUD_DAYTIME_TOTAL
-sucal(lat=lat,days=days,rad_mea,tmax=tmax, tmin=tmin,cc=CC)
+sucal(lat=lat,days=days,rad_mea, extraT=NULL,tmax=tmax, tmin=tmin,cc=CC)
 }
 
 %\keyword{}

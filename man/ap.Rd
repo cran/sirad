@@ -8,7 +8,7 @@ Angstrom-Prescott solar radiation model
 Angstrom-Prescott model is used to calculate daily global irradiance for a horizontal surface based on sunshine duration.
 }
 \usage{
-ap(days, lat, A, B, SSD)
+ap(days, lat, extraT=NULL, A, B, SSD)
 }
 \arguments{
   \item{days}{
@@ -16,6 +16,9 @@ Vector of class 'Date' of length n.
 }
   \item{lat}{
 Latitude in decimal degrees.
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{A}{
 Angstrom-Prescott model 'A' coefficient.
@@ -56,7 +59,7 @@ B <- 0.57
 sunshine <- Metdata$meteo$SUNSHINE
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
-plot(zoo(ap(days,lat,A,B,sunshine),order.by=days))
+plot(zoo(ap(days,lat,extraT=NULL,A,B,sunshine),order.by=days))
 }
 
 %\keyword{}

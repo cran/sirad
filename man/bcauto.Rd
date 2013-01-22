@@ -8,7 +8,7 @@ Auto-calibrate Bristow-Campbell model
 Function estimates Bristow-Campbell model coefficient 'B' based on auto-calibration procedure
 }
 \usage{
-bcauto(lat,lon,days,Tmax,Tmin,tal,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast=NA)
+bcauto(lat,lon,days,extraT=NULL,Tmax,Tmin,tal,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast=NA)
 }
 
 \arguments{
@@ -20,6 +20,9 @@ Longitude in decimal degrees.
 }
   \item{days}{
 Vector of class 'Date' of length n.
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{Tmax}{
 Vector of length n containing daily maximum temperature [C]. 
@@ -71,7 +74,7 @@ lat <- Metdata$LATITUDE
 lon <- Metdata$LONGITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
 dcoast <- Metdata$DCOAST
-bcauto(lat,lon,days,tmax,tmin,tal=0.76,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast)
+bcauto(lat,lon,days,extraT=NULL,tmax,tmin,tal=0.76,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast)
 }
 %\keyword{}
 

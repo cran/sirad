@@ -1,9 +1,14 @@
 apcal <-
-function(lat,days,rad_mea,SSD) {
+function(lat,days,rad_mea,extraT=NULL, DL=NULL, SSD) {
         i <- dayOfYear(days)
-        DL <- extrat(lat=radians(lat),i)$DayLength   #[hours]
-        Sd <- extrat(lat=radians(lat),i)$ExtraTerrestrialSolarRadiationDaily  # [MJ]
-        Y <- rad_mea/Sd      
+        
+        if (is.null(extraT) | is.null(DL))
+        {
+        ex <- extrat(lat=radians(lat),i)
+        DL <- ex$DayLength   #[hours]
+        extraT <- ex$ExtraTerrestrialSolarRadiationDaily  # [MJ]
+        }
+        Y <- rad_mea/extraT      
         X <- SSD/DL
         m <- lm(Y ~ X)
         rval <- c(m$coefficients,summary(m)$r.squared)

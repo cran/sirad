@@ -7,7 +7,7 @@ Auto-calibrate Hargreaves model
 Function estimates Hargreaves model coefficients 'A' and 'B' based on autocalibration procedure
 }
 \usage{
-hauto(lat, lon, days, Tmax, Tmin, tal, Ha_guess = 0.16, Hb_guess = 0.1, epsilon=0.5, perce = NA) 
+hauto(lat, lon, days,extraT = NULL, Tmax, Tmin, tal, Ha_guess = 0.16, Hb_guess = 0.1, epsilon=0.5, perce = NA) 
 }
 \arguments{
   \item{lat}{
@@ -18,6 +18,9 @@ Longitude in decimal degrees.
 }
   \item{days}{
 Vector of class 'Date' of length n.
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{Tmax}{
 Vector of length n containing daily maximum temperature [C].
@@ -67,7 +70,7 @@ Tmin <- Metdata$meteo$TEMP_MIN
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
 lon <- Metdata$LONGITUDE
-hauto(lat,lon,days,Tmax,Tmin,tal=0.76,Ha_guess=0.16,Hb_guess=0.1,epsilon=0.5,perce=NA)
+hauto(lat,lon,days,extraT=NULL,Tmax,Tmin,tal=0.76,Ha_guess=0.16,Hb_guess=0.1,epsilon=0.5,perce=NA)
 }
 
 

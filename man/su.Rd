@@ -8,7 +8,7 @@ Supit-Van Kappel solar radiation model
 'su()' calculates daily solar radiation based on daily cloud coverage and temperature range using Supit-Van Kappel model.
 }
 \usage{
-su(days, lat, A, B, C, tmax, tmin, CC)
+su(days, lat, extraT=NULL, A, B, C, tmax, tmin, CC)
 }
 
 \arguments{
@@ -17,6 +17,9 @@ Vector of class 'Date' of length n.
 }
   \item{lat}{
 Latitude in decimal degrees.
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{A}{
 Supit-Van Kappel model coefficient 'A'.
@@ -67,7 +70,7 @@ tmin <- Metdata$meteo$TEMP_MIN
 cc <- Metdata$meteo$CLOUD_DAYTIME_TOTAL
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
-plot(zoo(su(days=days, lat=lat, A=0.07, B=0.54, C=-0.2, tmax=tmax, tmin=tmin, CC=cc),order.by=days))
+plot(zoo(su(days=days, lat=lat, extraT=NULL, A=0.07, B=0.54, C=-0.2, tmax=tmax, tmin=tmin, CC=cc),order.by=days))
 }
 
 

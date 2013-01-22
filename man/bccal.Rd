@@ -8,7 +8,7 @@ Calibrate Bristow-Campbell model
 Function estimates Bristow-Campbell model coefficient 'B' based on reference data
 }
 \usage{
-bccal(lat, days, rad_mea, Tmax, Tmin, tal)
+bccal(lat, days, rad_mea,extraT=NULL,Tmax, Tmin, tal)
 }
 
 \arguments{
@@ -20,6 +20,9 @@ Vector of class 'Date' of length n.
 }
   \item{rad_mea}{
 Vector of length n containing reference (e.g. measured) solar radiation [MJm-2].
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{Tmax}{
 Vector of length n containing daily maximum temperature [C]. 
@@ -58,7 +61,7 @@ tmin <- Metdata$meteo$TEMP_MIN
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
-bccal(lat,days,rad_mea,tmax,tmin, tal=0.76)
+bccal(lat,days,rad_mea,extraT=NULL,tmax,tmin, tal=0.76)
 }
 
 %\keyword{}

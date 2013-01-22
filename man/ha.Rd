@@ -8,7 +8,7 @@ Hargreaves solar radiation model
 'ha()' calculates daily solar radiation based on daily temperature range using Hargreaves model.
 }
 \usage{
-ha(days, lat, A, B, Tmax, Tmin)
+ha(days, lat, extraT=NULL, A, B, Tmax, Tmin)
 }
 \arguments{
   \item{days}{
@@ -16,6 +16,9 @@ Vector of class 'Date' of length n.
 }
   \item{lat}{
 Latitude in decimal degrees.
+}
+  \item{extraT}{
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation 
 }
   \item{A}{
 Hargreaves model coefficient 'A'.
@@ -56,7 +59,7 @@ tmax <- Metdata$meteo$TEMP_MAX
 tmin <- Metdata$meteo$TEMP_MIN
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
-plot(zoo(ha(days=days, lat=lat, A=0.17, B=0, Tmax=tmax, Tmin=tmin),order.by=days))
+plot(zoo(ha(days=days, lat=lat, extraT=NULL,A=0.17, B=0, Tmax=tmax, Tmin=tmin),order.by=days))
 }
 
 %\keyword{}

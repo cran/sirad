@@ -1,9 +1,9 @@
 ap <-
-function(days,lat,A,B,SSD) {
+function(days,lat,extraT=NULL,A,B,SSD) {
       i <- dayOfYear(days)
       latt <- radians(lat)
-      Sd <- extrat(i=i,lat=latt)$ExtraTerrestrialSolarRadiationDaily
-      ap <- Sd*(A+B*(SSD/dayLength(lat=latt,i=i)))
+      if (is.null(extraT)) extraT <- extrat(i=i,lat=latt)$ExtraTerrestrialSolarRadiationDaily
+      ap <- extraT*(A+B*(SSD/dayLength(lat=latt,i=i)))
       ap 
 }
 
