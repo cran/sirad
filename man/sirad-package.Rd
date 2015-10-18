@@ -5,18 +5,17 @@
 \title{
 Functions for calculating daily solar radiation and avapotranspiration}
 \description{
-Package provides functions to calculate daily solar radiation at horizontal surface using several well-known models. It also icludes functions for model calibration based on groud-truth data as well as a function for auto-calibration. The FAO Penmann-Monteith equation to calculate evapotranspiration is also included.
+Calculates daily solar radiation at horizontal surface using several well-known models (Bristow-Campbell, Hargreaves, Supit-Van Kappel, Mahmood-Hubbard, Angrstrom-Prescott). It also includes functions for model calibration based on groud-truth data as well as a function for auto-calibration. The FAO Penmann-Monteith equation to calculate evapotranspiration is also included.
 }
 \details{
 \tabular{ll}{
 Package: \tab sirad\cr
 Type: \tab Package\cr
-Version: \tab 2.0-7\cr
-Date: \tab 2013-01-22\cr
+Version: \tab 2.3-0\cr
+Date: \tab 2015-10-17\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
-This package provides functions to calculate daily solar radiation at horizontal surface using several well-known models (Bristow&Campbell, Hargreaves, Supit-Van Kappel, Mahmood-Hubbard, Angrstrom-Prescott). It also includes functions for model calibration based on groud-truth data as well as a function for auto-calibration.
 }
 \author{
 Jedrzej S. Bojanowski
@@ -39,5 +38,6 @@ B <- 0.57
 sunshine <- Metdata$meteo$SUNSHINE
 days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
-plot(zoo(ap(days=days,lat=lat,extraT=NULL, A=A,B=B,SSD=sunshine),order.by=days))
+lon <- Metdata$LONGITUDE
+plot(zoo(ap(days=days,lat=lat,lon=lon,extraT=NULL, A=A,B=B,SSD=sunshine),order.by=days))
 }

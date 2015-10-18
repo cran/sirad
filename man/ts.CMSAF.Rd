@@ -15,14 +15,14 @@ ts.CMSAF(files,latlon)
 The vector of file names which the data are to be read from. 
 }
   \item{latlon}{
-A vector or a 2-column matrix with latitude(s), longitude(s) of the location(s).
+A 2-column matrix with latitude(s), longitude(s) of the location(s) in decimal degrees. First column: latitude; second column: longitude.
 }
 }
 \details{
 CM SAF delivers datasets in the NetCDF format. 'ts.CMSAF' allows to extract the time series from a set of those NetCDF files for the specified locations. 
 }
 \value{
-A multivariate 'zoo' object.
+4-column data frame: lat, lon, cmsaf value, date.
 }
 
 %\references{}
@@ -36,7 +36,7 @@ Jedrzej S. Bojanowski
 %\seealso{}
 
 \examples{
-\dontrun{plot(ts.CMSAF(files,latlon))}
+\dontrun{ts.CMSAF(files,latlon)}
 }
 
 %\keyword{}

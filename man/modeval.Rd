@@ -2,13 +2,15 @@
 \alias{modeval}
 
 \title{
-Estimators of the model performance.
+Model performance statistics.
 }
 \description{
 Function estimates several statistics comparing modelled and reference (measured) values.
 }
 \usage{
-modeval(calculated,measured,stat=c("N","pearson","MBE","MAE","RMSE","RRMSE","R2","slope","intercept","EF","SD","CRM","MPE","AC","ACu","ACs"),minlength=4)
+modeval(calculated,measured,
+stat=c("N","pearson","MBE","RMBE","MAE","RMAE","RMSE","RRMSE","R2","slope",
+"intercept","EF","SD","CRM","MPE","AC","ACu","ACs"),minlength=4)
 }
 
 \arguments{
@@ -34,7 +36,9 @@ List of 13 statistics:
 \item{N}{number of observations}  
 \item{person}{Pearson's Correlation Coefficient}
 \item{MBE}{Mean (Bias) Error}
+\item{RMBE}{Relative Mean (Bias) Error}
 \item{MAE}{Mean Absolute Error}
+\item{RMAE}{Relative Mean Absolute Error}
 \item{RMSE}{Root Mean Square Error}
 \item{RRMSE}{Relative Root Mean Square Error}
 \item{R2}{Coefficient of determination from linear model}

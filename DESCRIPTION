@@ -1,24 +1,21 @@
 Package: sirad
 Type: Package
-Title: Functions for calculating daily solar radiation and
-        evapotranspiration
-Version: 2.0-7
-Date: 2013-01-22
+Title: Functions for Calculating Daily Solar Radiation and
+        Evapotranspiration
+Version: 2.3-0
+Date: 2015-10-17
 Author: Jedrzej S. Bojanowski
 Maintainer: Jedrzej S. Bojanowski <jedrzej.bojanowski@gmail.com>
-Description: Package provides functions to calculate daily solar
-        radiation at horizontal surface using several well-known
-        models. It also includes functions for model calibration based
-        on ground-truth data as well as a function for
-        auto-calibration. The FAO Penmann-Monteith equation to
-        calculate evapotranspiration is also included.
+Description: Calculating daily global solar radiation at horizontal surface using several well-known models (i.e. Angstrom-Prescott, Supit-Van Kappel, Hargreaves, Bristow and Campbell, and Mahmood-Hubbard), and model calibration based on ground-truth data, and (3) model auto-calibration. The FAO Penmann-Monteith equation to calculate evapotranspiration is also included.
 URL: http://sirad.r-forge.r-project.org/,
         http://mars.jrc.ec.europa.eu/mars/Projects/Solar-Radiation-in-MCYFS,
         http://jbojanowski.pl
-Depends: zoo, ncdf, RNetCDF, raster
+Imports: stats, zoo, ncdf, raster
 License: GPL-2
 LazyLoad: yes
 LazyData: yes
-Packaged: 2013-01-23 13:36:48 UTC; jed
+Depends: R (>= 3.0.0)
+Packaged: 2015-10-18 09:19:16 UTC; Jed
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-01-23 16:20:30
+Date/Publication: 2015-10-18 17:19:57

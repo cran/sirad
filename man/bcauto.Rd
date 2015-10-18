@@ -8,7 +8,8 @@ Auto-calibrate Bristow-Campbell model
 Function estimates Bristow-Campbell model coefficient 'B' based on auto-calibration procedure
 }
 \usage{
-bcauto(lat,lon,days,extraT=NULL,Tmax,Tmin,tal,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast=NA)
+bcauto(lat,lon,days,extraT=NULL,Tmax,Tmin,tal,BCc=2,
+BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast=NA)
 }
 
 \arguments{
@@ -33,6 +34,9 @@ Vector of length n containing daily minumum temperature [C].
   \item{tal}{
 Clear sky transmissivity.
 }
+  \item{BCc}{
+Bristow-Campbell model coefficient 'C' usually equaled to 2.
+}
   \item{BCb_guess}{
 Assumption of Bristow-Campbell coefficient. Default set to 0.13.
 }
@@ -53,7 +57,7 @@ The auto-calibration method bases on the assumption that on the clear-sky days m
 \item{BCb}{Bristow-Campbell 'B' coefficient}
 }
 \references{
-Bojanowski, J., Donatelli, M., 2012, Auto-calibration of the Bristow and Campbell solar radiation model, Environmental Modelling and Software. [in prep.]
+Bojanowski, J.S., Donatelli, M., Skidmore, A.K., Vrieling, A., 2013. An auto-calibration procedure for empirical solar radiation models Environmental Modelling and Software 49, 118-128.
 }
 \author{
   Jedrzej S. Bojanowski
@@ -74,7 +78,8 @@ lat <- Metdata$LATITUDE
 lon <- Metdata$LONGITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
 dcoast <- Metdata$DCOAST
-bcauto(lat,lon,days,extraT=NULL,tmax,tmin,tal=0.76,BCb_guess=0.13,epsilon=0.5,perce=NA,dcoast)
+
+bcauto(lat,lon,days,extraT=NULL,tmax,tmin,perce=NA,dcoast)
 }
 %\keyword{}
 

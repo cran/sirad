@@ -8,7 +8,7 @@ FAO Penman-Monteith evapotranspiration equation
 'et0' estimates evapotranspiration based on FAO Penman-Monteith equation
 }
 \usage{
-et0(Tmax,Tmin, vap_pres,sol_rad,tal,z,uz,meah=10,extraT,days=NA,lat=NA)
+et0(Tmax,Tmin, vap_pres,sol_rad,tal,z,uz,meah=10,extraT=NA,days=NA,lat=NA)
 }
 
 \arguments{
@@ -31,13 +31,13 @@ Clear sky transmissivity [0-1].
 Altitude above the sea level [m].
 }
   \item{uz}{
-Wind speed measured at heith 'z' [ms-1].
+Wind speed measured at heith 'meah' [ms-1].
 }
   \item{meah}{
 The height (above the ground level) of the wind speed measurement [m].
 }
   \item{extraT}{
-Optional. Vector of length n of extraterrestrial solar radiation [MJm-2d-1]. If 'NULL' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation. 
+Optional. Vector of length n of extraterrestrial solar radiation [MJm-2d-1]. If 'NA' then it is calculated by the function. Providing extraterrestrial solar radiation speeds up the computation. 
 }
   \item{days}{
 Required only if extraT=NA. Vector of class 'Date' of length n.
@@ -73,11 +73,12 @@ days <- Metdata$meteo$DAY
 lat <- Metdata$LATITUDE
 rad_mea <- Metdata$meteo$RAD_MEA
 z <- Metdata$ALTITUDE
-wind <-  Metdata$meteo$WIND10
+wind <-  Metdata$meteo$WIND_10
 
 tal <- cst(rad_mea,dayOfYear(Metdata$meteo$DAY),radians(Metdata$LATITUDE)) 
 
-et0(Tmax=tmax,Tmin=tmin, vap_pres=vpres,sol_rad=rad_mea,tal=tal,z=Metdata$ALTITUDE,uz=wind,meah=10,extraT=NA,days=days,lat=lat)
+et0(Tmax=tmax,Tmin=tmin, vap_pres=vpres,sol_rad=rad_mea,tal=tal,z=Metdata$ALTITUDE,
+uz=wind,meah=10,extraT=NA,days=days,lat=lat)
 }
 
 %\keyword{}
