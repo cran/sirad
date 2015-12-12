@@ -1,5 +1,5 @@
-7334d4813e98a882eaed2941ec84e4ee *DESCRIPTION
-2f08c03cda64c967123d7a643a8c37d7 *NAMESPACE
+37c3ce2296595bb3ca94c5e94f7adf49 *DESCRIPTION
+88b07ec221f8fdb50ae4e12de0b8cd47 *NAMESPACE
 95b12d874eac41eeb77cd1cf3ea9f27d *R/ap.R
 697506ab5310048a464142dc4844c83c *R/apcal.R
 3922f6f2a568e12d4a97c0d6f3f215f9 *R/bc.R
@@ -37,7 +37,6 @@ f1b764d2d60507a84a403dc5464172cf *R/sucal.R
 f44aa69e8e671b5a9bfabd793d0e3ece *R/sysdata.rda
 56c5f4bd30a6a2d848c0fb4dc1b63cf5 *R/timeOfSunrise.R
 1e20d2247dae9a27f838aa4314676ab0 *R/timeOfSunset.R
-96e002cefc6c78723f4b5780a2bc0057 *R/ts.CMSAF.R
 cbad05eeb15ea3027b2c4dfc8245c593 *R/wind2.r
 cc9e91973f5e1d71b89c4dc181e91123 *data/Metdata.rda
 e058bf0b0ef05ef03b94b12103adf1eb *man/Metdata.Rd
@@ -63,8 +62,7 @@ c17d414112d6d792f65ec9510ba8dc00 *man/psychC.Rd
 e9506e8e1e9271b8f031dbbbb6c4d7a1 *man/radians.Rd
 1c6c9658e79d15427b2cd4774b8cf682 *man/rnl.Rd
 bc90d2eb746c722e39d92d8efd189ef0 *man/rns.Rd
-2f97d7a7c875b8a375a26f4f637d8ae0 *man/sirad-package.Rd
+5a2683bdce0be18e577cc7110237d66e *man/sirad-package.Rd
 b77298b0b40da17affc95d52fd149ca4 *man/su.Rd
 81dcf0a92b7d0afd2af36a9a92f065b4 *man/sucal.Rd
-ec9acb308a96f2fe717161bbc764bbb6 *man/ts.CMSAF.Rd
 5c266b40eae4f88a3118450846ba3ead *man/wind2.Rd
