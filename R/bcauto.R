@@ -2,22 +2,27 @@ bcauto <-
   function (lat, lon, days,extraT = NULL, Tmax, Tmin, tal, BCc=2, BCb_guess = 0.13, epsilon = 0.5,
             perce = NA, dcoast = NA) 
   {
-    if (is.na(perce)) { 
-      p <- extract(CFC, matrix(c(lon,lat),1,2))
-      perce <- -68*log(p)+0.92*p+225
-      if (p < 24) perce <- 30
-      if (p > 71) perce <- 0.5
-      if (is.na(perce)) { perce <- 1
-                          warning("Lat/lon outside the Cloud Fraction Cover map. Default perce=1 is used")
+    if (is.na(perce)) {
+      p <- extract(CFC, matrix(c(lon, lat), 1, 2))
+      if (is.na(p)) {
+        perce <- 1
+        warning("Lat/lon outside the Cloud Fraction Cover map. Default perce=1 is used")
+      }
+      else {
+        if (p >= 24 | p <= 71)
+          perce <- -68 * log(p) + 0.92 * p + 225
+        if (p < 24)
+          perce <- 30
+        if (p > 71)
+          perce <- 0.5
       }
     }
+    
     Tmax <- Tmax[order(days)]
     Tmin <- Tmin[order(days)]
     days <- days[order(days)]
-    if (!is.na(dcoast) & dcoast <= 15) 
-      epsilon <- 0.1
-    if (!is.na(dcoast) & dcoast > 15) 
-      epsilon <- 0.5
+    if (!is.na(dcoast) & dcoast <= 15)  epsilon <- 0.1
+    if (!is.na(dcoast) & dcoast > 15)  epsilon <- 0.5
     latt <- radians(lat)
     i <- dayOfYear(days)    
     if (is.null(extraT)) extraT <- extrat(i = i, lat = latt)$ExtraTerrestrialSolarRadiationDaily    

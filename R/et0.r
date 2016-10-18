@@ -1,6 +1,6 @@
 et0 <-
   function(Tmax,Tmin, vap_pres,sol_rad,tal,z,uz,meah=10,extraT=NA,days=NA,lat=NA) {
-    
+        
     if (!(is.numeric(extraT) & length(extraT)==length(Tmax)))  {
       extraT <- extrat(dayOfYear(days), radians(lat))$ExtraTerrestrialSolarRadiationDaily  
     }

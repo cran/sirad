@@ -1,9 +1,9 @@
-37c3ce2296595bb3ca94c5e94f7adf49 *DESCRIPTION
+37e6c195ebf37902c50396d70c451eee *DESCRIPTION
 88b07ec221f8fdb50ae4e12de0b8cd47 *NAMESPACE
 95b12d874eac41eeb77cd1cf3ea9f27d *R/ap.R
 697506ab5310048a464142dc4844c83c *R/apcal.R
 3922f6f2a568e12d4a97c0d6f3f215f9 *R/bc.R
-2ffb3da826d66b52ddf807378e1fa2bb *R/bcauto.R
+10171618402800762ba1e8e76b513e0e *R/bcauto.R
 c4cdb0ab72ef5c00822a624fe5c55e4b *R/bccal.R
 6cc634c30cba154975899b922384c2dd *R/corrEarthSunDist.R
 5791f4a06382baf3e939e68587d3d248 *R/cst.R
@@ -14,9 +14,9 @@ add4b1be36a3dcfdc88eb4df70a46935 *R/daylightTimeFactor.R
 5035fbdb9f49a796821875180db8225c *R/degrees.R
 bbeca5f1e09daec75507f4b5679ff53a *R/deltaVP.r
 20c6fa573cf62bbddf63d17b2524152c *R/es.r
-9ace37f99a82774aaccdf90d31eb4427 *R/et0.r
-755731f2e76a360190f81da493ed9798 *R/exd.R
-f48ba6c60d49a3814311c88c3f6a575f *R/exh.R
+677c19a3b858c2e82ded8938ee4e91ec *R/et0.r
+88c62ca6c9d28029f547cba4c106cc92 *R/exd.R
+29633e2d9ae414f5fa6cfdd62e6bce64 *R/exh.R
 5217fdf23f78dc4a3907b0b4339c3d19 *R/extrat.R
 d9a7cd383d8ef4bbfbeb7654f44a025e *R/ha.R
 33756b78fef2bc66febf54d3b7c0dd13 *R/hacal.R
@@ -52,7 +52,7 @@ bdf494b392cc13856428ff2ec1e1cd78 *man/degrees.Rd
 ff6eb8e9223c2e0cc800bd1176bd67aa *man/deltaVP.Rd
 df4475b4996e7afaa029b804585a49b4 *man/es.Rd
 f47e567d1af41fec74cbfcfca567b5e2 *man/et0.Rd
-14f374b4583f9d52246bd52e6ddf9fd2 *man/extrat.Rd
+c3e02226c4e62f7174012f536d7f806e *man/extrat.Rd
 76bad3d2acbc2169abf72bc03a1b6fc0 *man/ha.Rd
 9d0a33e897de4d320604e881d77cd4f6 *man/hacal.Rd
 587afb472dc63f776d8d004c6cb5753f *man/hauto.Rd
@@ -62,7 +62,7 @@ c17d414112d6d792f65ec9510ba8dc00 *man/psychC.Rd
 e9506e8e1e9271b8f031dbbbb6c4d7a1 *man/radians.Rd
 1c6c9658e79d15427b2cd4774b8cf682 *man/rnl.Rd
 bc90d2eb746c722e39d92d8efd189ef0 *man/rns.Rd
-5a2683bdce0be18e577cc7110237d66e *man/sirad-package.Rd
+e12f5dfbd58e2490fa0e279d252c7a26 *man/sirad-package.Rd
 b77298b0b40da17affc95d52fd149ca4 *man/su.Rd
 81dcf0a92b7d0afd2af36a9a92f065b4 *man/sucal.Rd
 5c266b40eae4f88a3118450846ba3ead *man/wind2.Rd

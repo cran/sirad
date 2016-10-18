@@ -24,8 +24,8 @@ Solar radiation outside of the earth's atmosphere is called extraterrestrial sol
 }
 \value{
 List of 3 elements:
-\item{ExtraTerrestrialSolarRadiationDaily}{daily sum of extraterrestrial radiation}  
-\item{TerrestrialSolarRadiationHourly}{vector of length 24 of hourly sums of extraterrestrial radiation}
+\item{ExtraTerrestrialSolarRadiationDaily}{daily sum of extraterrestrial radiation [MJm-2]}  
+\item{TerrestrialSolarRadiationHourly}{vector of length 24 of hourly sums of extraterrestrial radiation [MJm-2]}
 \item{DayLength}{day length in hours}
 
 }
